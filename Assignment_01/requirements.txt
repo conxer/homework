@@ -1,0 +1,4 @@
+opencv-python
+numpy
+scipy
+gradio==3.36.1
