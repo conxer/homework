@@ -18,8 +18,6 @@ Fill the [Missing Part](run_global_transform.py#L21) of 'run_global_transform.py
 Implement MLS or RBF based image deformation in the [Missing Part](run_point_transform.py#L52) of 'run_point_transform.py'.
 
 ---
-## 一个作业提交模板 (里面的结果也可参考)
-
 
 ## Implementation of Image Geometric Transformation
 
