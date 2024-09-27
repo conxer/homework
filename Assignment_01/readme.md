@@ -10,13 +10,31 @@
 - [Gradio: 一个好用的网页端交互GUI](https://www.gradio.app/)
 
 ### 1. 基本图像几何变换（缩放/旋转/平移）。
-
-
+本文的几何变换是基于仿射变换实现的。
 
 ### 2. 基于点的图像变形。
-
-
-
+本文的图像变形是基于径向基函数（RBF）实现的，径向基函数（Radial Basis Function，简称RBF）是一种用于多变量插值的方法，广泛应用于机器学习和信号处理领域。具体算法见[Paper: Image Warping by Radial Basis Functions](https://www.sci.utah.edu/~gerig/CS6640-F2010/Project3/Arad-1995.pdf)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inverse Multiquadric RBF</title>
+</head>
+<body>
+    <h1>平方倒数径向基函数（Inverse Multiquadric Radial Basis Function）</h1>
+    <p>平方倒数径向基函数（Inverse Multiquadric Radial Basis Function）是一种径向基函数，其数学表达式通常如下所示：</p>
+    <p><strong>φ(r) = 1 / √(c² + r²)</strong></p>
+    <ul>
+        <li><strong>φ(r):</strong> 径向基函数的值。</li>
+        <li><strong>r:</strong> 从原点（或者某个中心点）到输入点的欧氏距离。</li>
+        <li><strong>c:</strong> 是一个形状参数，通常是一个正常数。</li>
+    </ul>
+    <p>这个函数的特点是，当距离 r 增加时，函数值会逐渐减小，并且随着距离的增加，函数值的减小速度会逐渐变慢。这使得它在某些应用中非常有用，比如在机器学习中的支持向量机（SVM）或者高斯过程（Gaussian Process）中作为核函数使用。</p>
+    <p>平方倒数径向基函数的一个关键特性是它能够处理多维输入空间中的点，并且它的函数值仅依赖于输入点之间的距离。这使得它在处理空间数据或者需要捕捉输入特征之间复杂关系的问题时非常有用。</p>
+    <p>在实际应用中，参数 c 的选择对函数的行为有很大影响。不同的 c 值会导致函数的平滑度和局部敏感性有所不同，因此在设计模型时需要仔细选择这个参数。</p>
+</body>
+</html>
 
 
 ## 要求
