@@ -1,6 +1,6 @@
-# Assignment 1 - Image Warping
+# 作业 1 - 图像变形
 
-### In this assignment, you will implement basic transformation and point-based deformation for images.
+### 在本次作业中，您将实现图像的基本变换和基于点的变形。
 
 ### Resources:
 - [Teaching Slides](https://rec.ustc.edu.cn/share/afbf05a0-710c-11ef-80c6-518b4c8c0b96) 
@@ -9,11 +9,11 @@
 - [OpenCV Geometric Transformations](https://docs.opencv.org/4.x/da/d6e/tutorial_py_geometric_transformations.html)
 - [Gradio: 一个好用的网页端交互GUI](https://www.gradio.app/)
 
-### 1. Basic Image Geometric Transformation (Scale/Rotation/Translation).
+### 1. 基本图像几何变换（缩放/旋转/平移）。
 Fill the [Missing Part](run_global_transform.py#L21) of 'run_global_transform.py'.
 
 
-### 2. Point Based Image Deformation.
+### 2. 基于点的图像变形。
 
 Implement MLS or RBF based image deformation in the [Missing Part](run_point_transform.py#L52) of 'run_point_transform.py'.
 
