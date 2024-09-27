@@ -1,6 +1,6 @@
 # 作业 1 - 图像变形
 
-### 在本次作业中，您将实现图像的基本变换和基于点的变形。
+### 在本次作业中，您将看到图像的基本变换和基于点的变形。
 
 ### Resources:
 - [Teaching Slides](https://rec.ustc.edu.cn/share/afbf05a0-710c-11ef-80c6-518b4c8c0b96) 
@@ -15,9 +15,7 @@
 
 ### 2. 基于点的图像变形。
 
-Implement MLS or RBF based image deformation in the [Missing Part](run_point_transform.py#L52) of 'run_point_transform.py'.
 
----
 
 
 
@@ -43,7 +41,7 @@ python run_global_transform.py
 python run_point_transform.py
 ```
 
-## 结果（需要添加更多结果图像）
+## 结果
 ### 基本变换
 <img src="pics/global-transform .gif" alt="alt text" width="800">
 
@@ -52,4 +50,4 @@ python run_point_transform.py
 
 ##  致谢
 
->📋 感谢[Image Deformation Using Moving Least Squares](https://people.engr.tamu.edu/schaefer/research/mls.pdf)提出的算法.
+>📋 感谢[Paper: Image Warping by Radial Basis Functions](https://www.sci.utah.edu/~gerig/CS6640-F2010/Project3/Arad-1995.pdf)提出的算法.
