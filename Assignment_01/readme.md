@@ -19,9 +19,12 @@
 
 #### 平方倒数径向基函数（Inverse Multiquadric Radial Basis Function）
 
+
 平方倒数径向基函数（Inverse Multiquadric Radial Basis Function）是一种径向基函数，其数学表达式通常如下所示：
 
-\[ \phi(r) = \frac{1}{\sqrt{c^2 + r^2}} \]
+$$
+\phi(r) = \frac{1}{\sqrt{c + r^2}}
+$$
 
 其中：
 - \( \phi(r) \)：径向基函数的值。
