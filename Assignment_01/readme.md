@@ -10,8 +10,8 @@
 - [Gradio: 一个好用的网页端交互GUI](https://www.gradio.app/)
 
 ### 1. 基本图像几何变换（缩放/旋转/平移）。
-Fill the [Missing Part](run_global_transform.py#L21) of 'run_global_transform.py'.
 
+<img src="pics/teaser.png" alt="alt text" width="800">
 
 ### 2. 基于点的图像变形。
 
@@ -19,42 +19,37 @@ Implement MLS or RBF based image deformation in the [Missing Part](run_point_tra
 
 ---
 
-## Implementation of Image Geometric Transformation
 
-This repository is Yudong Guo's implementation of Assignment_01 of DIP. 
 
-<img src="pics/teaser.png" alt="alt text" width="800">
+## 要求
 
-## Requirements
+要安装要求：
 
-To install requirements:
-
-```setup
+```安装
 python -m pip install -r requirements.txt
 ```
 
+## 运行
 
-## Running
-
-To run basic transformation, run:
+要运行基本转换，请运行：
 
 ```basic
 python run_global_transform.py
 ```
 
-To run point guided transformation, run:
+要运行点引导变换，请运行：
 
 ```point
 python run_point_transform.py
 ```
 
-## Results (need add more result images)
-### Basic Transformation
-<img src="pics/global_demo.gif" alt="alt text" width="800">
+## 结果（需要添加更多结果图像）
+### 基本变换
+<img src="pics/global-transform .gif" alt="alt text" width="800">
 
-### Point Guided Deformation:
-<img src="pics/point_demo.gif" alt="alt text" width="800">
+### 点引导变形：
+<img src="pics/point-transform.gif" alt="alt text" width="800">
 
-## Acknowledgement
+##  致谢
 
->📋 Thanks for the algorithms proposed by [Image Deformation Using Moving Least Squares](https://people.engr.tamu.edu/schaefer/research/mls.pdf).
+>📋 感谢[Image Deformation Using Moving Least Squares](https://people.engr.tamu.edu/schaefer/research/mls.pdf)提出的算法.
