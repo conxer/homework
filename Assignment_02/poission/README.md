@@ -29,7 +29,7 @@ Our model achieves the following image fusion:
 [target]：
 <img src="data_poission/equation/target.jpg" alt="target image" width="800">
 [results]:
-<img src="data_poission/equation/results.jpg" alt="results image" width="800">
+<img src="data_poission/equation/results.png" alt="results image" width="800">
 
 ### 2、[Mona Lisa changes face]
 [source]：
