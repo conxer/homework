@@ -25,14 +25,23 @@ Then follow the video operation
 Our model achieves the following image fusion:
 
 ### 1、[Blend the equation into the sky background]
-![source](Assignment_02/poission/data_poission/equation/source.png)
-![target](Assignment_02/poission/data_poission/equation/target.jpg)
-![results](Assignment_02/poission/data_poission/equation/results.png)
+[source]：
+<img src="Assignment_02/poission/data_poission/equation/source.png" alt="alt text" width="800">
+[target]：
+<img src="Assignment_02/poission/data_poission/equation/target.jpg" alt="alt text" width="800">
+[results]:
+<img src="Assignment_02/poission/data_poission/equation/results.jpg" alt="alt text" width="800">
 ### 2、[Mona Lisa changes face]
-![source](Assignment_02/poission/data_poission/monolisa/source.png)
-![target](Assignment_02/poission/data_poission/monolisa/target.png)
-![results](Assignment_02/poission/data_poission/monolisa/results.png)
+[source]：
+<img src="Assignment_02/poission/data_poission/monolisa/source.png" alt="alt text" width="800">
+[target]：
+<img src="Assignment_02/poission/data_poission/monolisa/target.png" alt="alt text" width="800">
+[results]:
+<img src="Assignment_02/poission/data_poission/monolisa/results.png" alt="alt text" width="800">
 ### 3、[Sharks pose for a photo]
-![source](Assignment_02/poission/data_poission/monolisa/water.jpg)
-![target](Assignment_02/poission/data_poission/monolisa/water.jpg)
-![results](Assignment_02/poission/data_poission/monolisa/water.png)
+[source]：
+<img src="Assignment_02/poission/data_poission/water/source.jpg" alt="alt text" width="800">
+[target]：
+<img src="Assignment_02/poission/data_poission/water/target.jpg" alt="alt text" width="800">
+[results]:
+<img src="Assignment_02/poission/data_poission/water/results.png" alt="alt text" width="800">
