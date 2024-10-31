@@ -24,12 +24,14 @@ python run_blending_gradio.py
 Our model achieves the following image fusion:
 
 ### 1、[Blend the equation into the sky background]
+### 1、[Blend the equation into the sky background]
 [source]：
-<img src="Assignment_02/poission/data_poission/equation/source.png" alt="source image" width="800">
+<img src="Assignment_02/poisson/data_poission/equation/source.png" alt="alt text" width="800">
 [target]：
-<img src="Assignment_02/poission/data_poission/equation/target.jpg" alt="target image" width="800">
+<img src="Assignment_02/poisson/data_poission/equation/target.jpg" alt="alt text" width="800">
 [results]:
-<img src="Assignment_02/poission/data_poission/equation/results.jpg" alt="results image" width="800">
+<img src="Assignment_02/poisson/data_poission/equation/results.jpg" alt="alt text" width="800">
+
 
 ### 2、[Mona Lisa changes face]
 [source]：
