@@ -32,6 +32,7 @@ Our model achieves the following image fusion:
 [results]:
 <img src="Assignment_02/poisson/data_poission/equation/results.jpg" alt="alt text" width="800">
 
+![Blend the equation into the sky background](Assignment_02/poission/data_poission/equation/source.png)
 
 ### 2、[Mona Lisa changes face]
 [source]：
