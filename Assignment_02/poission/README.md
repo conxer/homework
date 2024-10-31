@@ -18,7 +18,6 @@ To operation the model(s) in the paper, run this command:
 ```
 python run_blending_gradio.py 
 ```
-Then follow the video operation
 
 ## Results
 
@@ -34,7 +33,7 @@ Our model achieves the following image fusion:
 
 ### 2、[Mona Lisa changes face]
 [source]：
-<img src="Assignment_02/poission/data_poission/monolisa/source.png" alt="source image" width="800">
+<img src="monolisa/source.png" alt="source image" width="800">
 [target]：
 <img src="Assignment_02/poission/data_poission/monolisa/target.png" alt="target image" width="800">
 [results]:
