@@ -21,7 +21,7 @@ python run_blending_gradio.py
 
 ## Results
 
-Our model achieves the following image fusion in the following ways:
+Our model achieves the following image fusion:
 
 ### 1、[Blend the equation into the sky background]
 
