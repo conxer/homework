@@ -24,26 +24,17 @@ python run_blending_gradio.py
 Our model achieves the following image fusion:
 
 ### 1、[Blend the equation into the sky background]
-[source]：
-<img src="data_poission/equation/source.png" alt="source image" width="800">
-[target]：
-<img src="data_poission/equation/target.jpg" alt="target image" width="800">
-[results]:
-<img src="data_poission/equation/results.png" alt="results image" width="800">
+[source]：<img src="data_poission/equation/source.png" alt="source image" width="800">
+[target]：<img src="data_poission/equation/target.jpg" alt="target image" width="800">
+[results]:<img src="data_poission/equation/results.png" alt="results image" width="800">
 
 ### 2、[Mona Lisa changes face]
-[source]：
-<img src="data_poission/monolisa/source.png" alt="source image" width="800">
-[target]：
-<img src="data_poission/monolisa/target.png" alt="target image" width="800">
-[results]:
-<img src="data_poission/monolisa/results.png" alt="results image" width="800">
+[source]：<img src="data_poission/monolisa/source.png" alt="source image" width="800">
+[target]：<img src="data_poission/monolisa/target.png" alt="target image" width="800">
+[results]:<img src="data_poission/monolisa/results.png" alt="results image" width="800">
 
 ### 3、[Sharks pose for a photo]
-[source]：
-<img src="data_poission/water/source.jpg" alt="source image" width="800">
-[target]：
-<img src="data_poission/water/target.jpg" alt="target image" width="800">
-[results]:
-<img src="data_poission/water/results.png" alt="results image" width="800">
+[source]：<img src="data_poission/water/source.jpg" alt="source image" width="800">
+[target]：<img src="data_poission/water/target.jpg" alt="target image" width="800">
+[results]:<img src="data_poission/water/results.png" alt="results image" width="800">
 
