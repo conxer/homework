@@ -27,12 +27,12 @@ Our model achieves the following image fusion:
 ### 1、[Blend the equation into the sky background]
 ![source](Assignment_02/poission/data_poission/equation/source.png)
 ![target](Assignment_02/poission/data_poission/equation/target.jpg)
-![results](Assignment_02/poission/data_poission/equation/results.jpg)
+![results](Assignment_02/poission/data_poission/equation/results.png)
 ### 2、[Mona Lisa changes face]
 ![source](Assignment_02/poission/data_poission/monolisa/source.png)
-![target](Assignment_02/poission/data_poission/monolisa/target.jpg)
-![results](Assignment_02/poission/data_poission/monolisa/results.jpg)
+![target](Assignment_02/poission/data_poission/monolisa/target.png)
+![results](Assignment_02/poission/data_poission/monolisa/results.png)
 ### 3、[Sharks pose for a photo]
-![source](Assignment_02/poission/data_poission/monolisa/water.png)
+![source](Assignment_02/poission/data_poission/monolisa/water.jpg)
 ![target](Assignment_02/poission/data_poission/monolisa/water.jpg)
-![results](Assignment_02/poission/data_poission/monolisa/water.jpg)
+![results](Assignment_02/poission/data_poission/monolisa/water.png)
