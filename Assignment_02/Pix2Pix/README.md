@@ -43,6 +43,7 @@ After 800 epochs were trained, the loss value of the training set reached 0.0543
 | loss value   |     0.0543         |      0.0608       |
 
 ### [The result predicted by the training set]
+<img src="results/train_results.png" alt="train_results" width="800">
 
 ### [The result predicted by the validation set]
-
+<img src="results/val_results.png" alt="val_results" width="800">
