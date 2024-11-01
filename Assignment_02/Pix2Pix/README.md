@@ -30,7 +30,7 @@ python train.py
 
 You can download pretrained models here:
 
-- [My awesome model](https://drive.google.com/mymodel.pth) 
+- [My awesome model](pix2pix_model_epoch_800.pth) 
 
 ## Results
 
