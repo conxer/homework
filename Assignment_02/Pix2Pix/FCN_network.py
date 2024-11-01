@@ -48,22 +48,14 @@ class FullyConvNetwork(nn.Module):
     def forward(self, x):
         # Encoder forward pass
         x1 = self.conv1(x)
-        print(f"x1 shape: {x1.shape}")  # 输出形状
         x2 = self.conv2(x1)
-        print(f"x2 shape: {x2.shape}")  # 输出形状
         x3 = self.conv3(x2)
-        print(f"x3 shape: {x3.shape}")  # 输出形状
         x4 = self.conv4(x3)
-        print(f"x4 shape: {x4.shape}")  # 输出形状
 
         # Decoder forward pass
         x5 = self.deconv1(x4)
-        print(f"x5 shape: {x5.shape}")  # 输出形状
         x6 = self.deconv2(x5)
-        print(f"x6 shape: {x6.shape}")  # 输出形状
         x7 = self.deconv3(x6)
-        print(f"x7 shape: {x7.shape}")  # 输出形状
         output = self.deconv4(x7)
-        print(f"output shape: {output.shape}")  # 输出形状
 
         return output
