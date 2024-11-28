@@ -6,6 +6,8 @@ from torch import nn
 from torch.optim.lr_scheduler import StepLR
 from facades_dataset import FacadesDataset
 from FCN_network import FullyConvNetwork, Discriminator
+import numpy as np
+import cv2
 
 # 损失函数：生成器和判别器各自的损失
 def criterion_GAN(prediction, target, is_real):
@@ -86,10 +88,14 @@ def train_one_epoch(generator, discriminator, dataloader, optimizer_G, optimizer
         if i % 100 == 0:
             print(f'Epoch [{epoch+1}/{num_epochs}], Step [{i+1}/{len(dataloader)}], Loss_G: {loss_G.item():.4f}, Loss_D: {loss_D.item():.4f}')
 
-
+    # 在每个 epoch 结束后保存生成的图像
+    save_images(image_rgb, image_semantic, fake_image, 'generated_images', epoch)
 
 def main():
     device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
+
+    # 创建 checkpoints 文件夹
+    os.makedirs('checkpoints', exist_ok=True)
 
     # 初始化数据集和数据加载器
     train_dataset = FacadesDataset(list_file='train_list.txt')
