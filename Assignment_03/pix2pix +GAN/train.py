@@ -68,6 +68,7 @@ def train_one_epoch(generator, discriminator, dataloader, optimizer_G, optimizer
         # 总判别器损失
         loss_D = (loss_D_real + loss_D_fake) / 2
         loss_D.backward(retain_graph=True)  # 保留计算图，避免第二次反向传播报错
+        torch.nn.utils.clip_grad_norm_(discriminator.parameters(), max_norm=1.0)  # 梯度裁剪
         optimizer_D.step()
 
         # ----------------------
@@ -77,9 +78,10 @@ def train_one_epoch(generator, discriminator, dataloader, optimizer_G, optimizer
 
         # 生成器损失
         fake_pred = discriminator(fake_input_image)
-        loss_G = criterion_GAN(fake_pred, image_semantic, True) + criterion_L1(fake_image, image_semantic) * 100
+        loss_G = criterion_GAN(fake_pred, image_semantic, True) + criterion_L1(fake_image, image_semantic) * 50  # L1 损失权重调整
 
         loss_G.backward()  # 计算生成器的梯度
+        torch.nn.utils.clip_grad_norm_(generator.parameters(), max_norm=1.0)  # 梯度裁剪
         optimizer_G.step()
 
         running_loss_G += loss_G.item()
@@ -93,15 +95,15 @@ def train_one_epoch(generator, discriminator, dataloader, optimizer_G, optimizer
 
 def main():
     device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
-
+    print(f'Using device: {device}')
     # 创建 checkpoints 文件夹
     os.makedirs('checkpoints', exist_ok=True)
 
     # 初始化数据集和数据加载器
     train_dataset = FacadesDataset(list_file='train_list.txt')
     val_dataset = FacadesDataset(list_file='val_list.txt')
-    train_loader = DataLoader(train_dataset, batch_size=16, shuffle=True, num_workers=4)
-    val_loader = DataLoader(val_dataset, batch_size=16, shuffle=False, num_workers=4)
+    train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True, num_workers=4)
+    val_loader = DataLoader(val_dataset, batch_size=32, shuffle=False, num_workers=4)
 
     # 初始化模型、损失函数和优化器
     generator = FullyConvNetwork().to(device)
@@ -110,7 +112,7 @@ def main():
     optimizer_G = optim.Adam(generator.parameters(), lr=0.0002, betas=(0.5, 0.999))
     optimizer_D = optim.Adam(discriminator.parameters(), lr=0.0002, betas=(0.5, 0.999))
 
-    num_epochs = 200
+    num_epochs = 500
     for epoch in range(num_epochs):
         train_one_epoch(generator, discriminator, train_loader, optimizer_G, optimizer_D, device, epoch, num_epochs)
 
