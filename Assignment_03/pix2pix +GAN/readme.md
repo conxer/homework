@@ -168,21 +168,10 @@ python train.py
 ## Results
 
 After training for 200 epochs, the results of semantic segmentation are shown as follows:
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        flex-direction: column;
-        text-align: center;
-    }
-    img {
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-        margin-bottom: 20px;
-    }
-</style>
+<div style="text-align: center;">
+    <img src="result/result_1.png" alt="results_1" style="width: 100%; height: auto; margin-bottom: 20px;">
+    <img src="result/result_2.png" alt="results_2" style="width: 100%; height: auto; margin-bottom: 20px;">
+    <img src="result/result_3.png" alt="results_3" style="width: 100%; height: auto; margin-bottom: 20px;">
+    <img src="result/result_4.png" alt="results_4" style="width: 100%; height: auto; margin-bottom: 20px;">
+    <img src="result/result_5.png" alt="results_5" style="width: 100%; height: auto; margin-bottom: 20px;">
+</div>
