@@ -168,47 +168,21 @@ python train.py
 ## Results
 
 After training for 200 epochs, the results of semantic segmentation are shown as follows:
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>图片展示</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            flex-direction: column;
-            text-align: center;
-        }
-        img {
-            width: 100%;
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 20px;
-        }
-    </style>
-</head>
-<body>
-    <img src="result/result_1.png" alt="results_1">
-    <img src="result/result_2.png" alt="results_2">
-    <img src="result/result_3.png" alt="results_3">
-    <img src="result/result_4.png" alt="results_4">
-    <img src="result/result_5.png" alt="results_5">
-</body>
-</html>
-
-
-<img src="result/result_1.png" alt="results_1" width="800">
-
-<img src="result/result_2.png" alt="results_2" width="800">
-
-<img src="result/result_3.png" alt="results_3" width="800">
-
-<img src="result/result_4.png" alt="results_4" width="800">
-
-<img src="result/result_5.png" alt="results_5" width="800">
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+        text-align: center;
+    }
+    img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+</style>
