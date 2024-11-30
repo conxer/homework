@@ -24,6 +24,8 @@ The loss of the Discriminator (GAN Loss)
 
 ### Weight Decay: 1e - 5
 
+### Experimental Dataset
+The dataset used in the experiment is facades. The download script for the dataset is in download_facades_dataset.sh.
 ## Requirements
 
 To install requirements:
@@ -48,19 +50,12 @@ To train the model(s) in the paper, run this command:
 python train.py 
 ```
 
-## Pre-trained Models
-
-You can download pretrained models here:
-
-- [My model](pix2pix_model_epoch_800.pth) 
 
 ## Results
 
-the predicted image is as follows:
+After training for 200 epochs, the results of semantic segmentation are shown as follows:
 
 
-### [The result predicted by the training set]
+
 <img src="results/train_results.png" alt="train_results" width="800">
-
-### [The result predicted by the validation set]
 <img src="results/val_results.png" alt="val_results" width="800">
