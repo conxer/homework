@@ -170,7 +170,7 @@ python train.py
 After training for 200 epochs, the results of semantic segmentation are shown as follows:
 
 
-![results1](result/results_1.png){: style="width: 100%; max-width: 800px;"}
+<img src="result/result_1.png" alt="results_1" width="800">
 
 ![results2](result/results_2.png){: style="width: 100%; max-width: 800px;"}
 
