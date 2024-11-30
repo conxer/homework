@@ -112,7 +112,7 @@ def main():
     optimizer_G = optim.Adam(generator.parameters(), lr=0.0002, betas=(0.5, 0.999))
     optimizer_D = optim.Adam(discriminator.parameters(), lr=0.0002, betas=(0.5, 0.999))
 
-    num_epochs = 500
+    num_epochs = 200
     for epoch in range(num_epochs):
         train_one_epoch(generator, discriminator, train_loader, optimizer_G, optimizer_D, device, epoch, num_epochs)
 
