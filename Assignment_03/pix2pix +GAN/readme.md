@@ -1,6 +1,28 @@
-# 基于 Pix2Pix + GAN 的图像语义分割
+# Image Semantic Segmentation Based on Pix2Pix + GAN
+This experiment combines Pix2Pix and GAN to achieve image semantic segmentation.
 
-本实验将 Pix2Pix 和 GAN 结合，实现了图像的语义分割。
+## Explanation of Hyperparameters
+The hyperparameters used for training are as follows:
+
+### Learning Rate:
+The learning rate of the Generator: 0.002
+The learning rate of the Discriminator: 0.001
+
+### Optimizer:
+The Adam optimizer, betas = (0.5, 0.999), weight_decay = 1e - 5
+
+### Learning Rate Scheduler:
+StepLR, every 100 epochs, the learning rate decays to half of the original
+
+### Loss Function:
+The loss of the Generator includes the adversarial loss (GAN Loss) and the L1 loss (L1 Loss, multiplied by a weight of 50)
+The loss of the Discriminator (GAN Loss)
+
+### Batch Size: 16
+
+### Number of Training Epochs: 200
+
+### Weight Decay: 1e - 5
 
 ## Requirements
 
@@ -34,13 +56,8 @@ You can download pretrained models here:
 
 ## Results
 
-After 800 epochs were trained, the loss value of the training set reached 0.0543, and the loss value of the validation set reached 0.0608, and the predicted image is as follows:
+the predicted image is as follows:
 
-### [Model performance]
-
-| results    |  the training | the validation |
-| ------------------ |---------------- | -------------- |
-| loss value   |     0.0543         |      0.0608       |
 
 ### [The result predicted by the training set]
 <img src="results/train_results.png" alt="train_results" width="800">
