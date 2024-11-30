@@ -26,9 +26,9 @@ The loss of the Discriminator (GAN Loss)
 
 ### Experimental Dataset
 The dataset used in the experiment is facades. The download script for the dataset is in download_facades_dataset.sh.
-## 生成器
-生成器中，输入的图像通过六个下采样层，然后通过一个中间层，最后通过六个上采样层得到最终的输出。这里使用了 U-Net 的结构，即每个下采样层和其对应的上一层的输出被拼接在一起，作为下一个下采样层的输入。
-核心代码如下
+## Generator
+In the generator, the input image passes through six downsampling layers, then through an intermediate layer, and finally through six upsampling layers to obtain the final output. Here, the structure of U-Net is used, that is, the output of each downsampling layer and its corresponding upper layer are concatenated together and used as the input of the next downsampling layer.
+The core code is as follows:
 ```
 class FullyConvNetwork(nn.Module):
     def __init__(self):
@@ -116,6 +116,30 @@ class FullyConvNetwork(nn.Module):
 
         return output
 ```
+## Discriminator
+The discriminator is a convolutional neural network. It takes in a 6-channel image (usually a concatenation of the real image and the generated image). Through multiple convolutional layers, it gradually extracts features and finally outputs a probability value to determine whether the input image is real (close to 1) or generated (close to 0). The LeakyReLU activation function is used in each layer to help stabilize the training.
+The core code is as follows:
+```
+class Discriminator(nn.Module):
+    def __init__(self):
+        super(Discriminator, self).__init__()
+
+        self.model = nn.Sequential(
+            nn.Conv2d(6, 64, kernel_size=4, stride=2, padding=1),  # Input: [RGB image + generated image]
+            nn.LeakyReLU(0.2, inplace=True),
+            nn.Conv2d(64, 128, kernel_size=4, stride=2, padding=1),
+            nn.BatchNorm2d(128),
+            nn.LeakyReLU(0.2, inplace=True),
+            nn.Conv2d(128, 256, kernel_size=4, stride=2, padding=1),
+            nn.BatchNorm2d(256),
+            nn.LeakyReLU(0.2, inplace=True),
+            nn.Conv2d(256, 512, kernel_size=4, stride=2, padding=1),
+            nn.BatchNorm2d(512),
+            nn.LeakyReLU(0.2, inplace=True),
+            nn.Conv2d(512, 1, kernel_size=4, stride=1, padding=1),
+            nn.Sigmoid()  # Output: [0, 1] probability indicating whether the image is real or fake
+        )
+```
 ## Requirements
 
 To install requirements:
@@ -145,10 +169,10 @@ python train.py
 
 After training for 200 epochs, the results of semantic segmentation are shown as follows:
 
-<div style="text-align: center;">
-    <img src="result/results_1.png" alt="results1" style="width: 100%; max-width: 800px;">
-    <img src="result/results_2.png" alt="results2" style="width: 100%; max-width: 800px;">
-    <img src="result/results_3.png" alt="results3" style="width: 100%; max-width: 800px;">
-    <img src="result/results_4.png" alt="results4" style="width: 100%; max-width: 800px;">
-    <img src="result/results_5.png" alt="results5" style="width: 100%; max-width: 800px;">
-</div>
+
+<img src="result/results_1.png" alt="results1" style="width: 100%; max-width: 800px;">
+<img src="result/results_2.png" alt="results2" style="width: 100%; max-width: 800px;">
+<img src="result/results_3.png" alt="results3" style="width: 100%; max-width: 800px;">
+<img src="result/results_4.png" alt="results4" style="width: 100%; max-width: 800px;">
+<img src="result/results_5.png" alt="results5" style="width: 100%; max-width: 800px;">
+
