@@ -34,4 +34,11 @@ python gradio_app.py
 ```
 # Result
 Reference image:
-<img src="assets/face1.png" alt="Reference image" width="300" height="200">
+<style>
+    img {
+        width: 400px; /* 根据页面宽度和想要占据的比例调整此值 */
+        display: block;
+        margin: 0 auto; /* 让图片在水平方向居中 */
+    }
+</style>
+<img src="assets/face1.png" alt="Reference image">
