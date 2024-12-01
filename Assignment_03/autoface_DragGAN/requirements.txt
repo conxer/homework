@@ -1,0 +1,11 @@
+gradio==3.34.0
+tqdm
+torch
+torchvision
+numpy
+ninja
+fire
+imageio
+imageio-ffmpeg
+scikit-image
+IPython
