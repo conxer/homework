@@ -1,7 +1,7 @@
 # Requirements
 ## Clone the DragGAN repository and install dependencies
 ### 1.Clone the DragGAN repository:
-'''
+```
 git clone https://github.com/Zeqiang - Lai/DragGAN.git
 cd DragGAN
 ```
