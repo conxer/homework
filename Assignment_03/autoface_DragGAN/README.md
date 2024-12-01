@@ -36,3 +36,4 @@ python gradio_app.py
 Reference image:
 
 <img src="assets/face1.png" alt="Reference image" width="600" height="600">
+Generated video:
