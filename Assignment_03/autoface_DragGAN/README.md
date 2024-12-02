@@ -37,8 +37,5 @@ image:
 
 <img src="assets/face3.png" alt="Reference image" width="600" height="600">
 video:
-<video width="600" controls>
-  <source src="assets/video.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+![Video](./assets/video.gif)
 
