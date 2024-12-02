@@ -37,5 +37,5 @@ image:
 
 <img src="assets/face3.png" alt="Reference image" width="600" height="600">
 video:
-![Video](./assets/video.gif)
+![Video](/assets/video.gif)
 
