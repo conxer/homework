@@ -33,7 +33,11 @@ python setup.py install
 python gradio_app.py
 ```
 # Result
-Reference image:
+image:
 
 <img src="assets/face3.png" alt="Reference image" width="600" height="600">
-Generated video:
+video:
+<video width="320" height="240" controls>
+  <source src="video.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
