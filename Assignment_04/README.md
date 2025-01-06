@@ -5,6 +5,7 @@ This assignment covers a complete pipeline for reconstructing a 3D scene represe
 
 ### Installation
 First, you need to install the [COLMAP](https://github.com/colmap/colmap/releases) library. It is recommended to install version 3.9.1. 
+
 Then install the PyTorch3D library:
 ```
 conda install -c fvcore -c iopath -c conda-forge fvcore iopath
