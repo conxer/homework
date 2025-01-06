@@ -31,5 +31,9 @@ python train.py --colmap_dir data/chair --checkpoint_dir data/chair/checkpoints
 
 ### Results
 
-[The chair model]<img src="data/chair/chair.gif" alt="alt text" width="800">
-[The lego model]<img src="data/lego/lego.gif" alt="alt text" width="800">
+#### The Chair Model
+![The Chair Model](data/chair/chair.gif)
+
+#### The Lego Model
+![The Lego Model](data/lego/lego.gif)
+
