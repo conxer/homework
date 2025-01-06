@@ -47,11 +47,16 @@ class GaussianRenderer(nn.Module):
         # Compute Jacobian of perspective projection
         J_proj = torch.zeros((N, 2, 3), device=means3D.device)
         ### FILL:
-        ### J_proj = ...
+        f_x = K[0, 0]
+        f_y = K[1, 1]
+        J_proj[:, 0, 0] = f_x / cam_points[:, 2]
+        J_proj[:, 1, 1] = f_y / cam_points[:, 2]
+        J_proj[:, 0, 2] = - f_x * cam_points[:, 0] / (cam_points[:, 2] ** 2)
+        J_proj[:, 1, 2] = - f_y * cam_points[:, 1] / (cam_points[:, 2] ** 2)
         
         # Transform covariance to camera space
         ### FILL: Aplly world to camera rotation to the 3d covariance matrix
-        ### covs_cam = ...  # (N, 3, 3)
+        covs_cam = torch.matmul(R, torch.matmul(covs3d, R.T))
         
         # Project to 2D
         covs2D = torch.bmm(J_proj, torch.bmm(covs_cam, J_proj.permute(0, 2, 1)))  # (N, 2, 2)
@@ -76,7 +81,8 @@ class GaussianRenderer(nn.Module):
         
         # Compute determinant for normalization
         ### FILL: compute the gaussian values
-        ### gaussian = ... ## (N, H, W)
+        P = torch.exp(-0.5 * torch.einsum('nhwi, nij, nhwj->nhw', dx, torch.inverse(covs2D), dx))
+        gaussian = P / (2 * torch.pi * torch.sqrt(torch.det(covs2D).reshape(N, 1, 1)))
     
         return gaussian
 
@@ -100,11 +106,11 @@ class GaussianRenderer(nn.Module):
         
         # 3. Sort by depth
         indices = torch.argsort(depths, dim=0, descending=False)  # (N, )
-        means2D = means2D[indices]      # (N, 2)
-        covs2D = covs2D[indices]       # (N, 2, 2)
-        colors = colors[ indices]       # (N, 3)
-        opacities = opacities[indices] # (N, 1)
-        valid_mask = valid_mask[indices] # (N,)
+        means2D = torch.index_select(means2D, 0, indices)
+        covs2D = torch.index_select(covs2D, 0, indices)
+        colors = torch.index_select(colors, 0, indices)
+        opacities = torch.index_select(opacities, 0, indices)
+        valid_mask = torch.index_select(valid_mask, 0, indices)
         
         # 4. Compute gaussian values
         gaussian_values = self.compute_gaussian_values(means2D, covs2D, self.pixels)  # (N, H, W)
@@ -118,8 +124,10 @@ class GaussianRenderer(nn.Module):
         colors = colors.permute(0, 2, 3, 1)  # (N, H, W, 3)
         
         # 7. Compute weights
-        ### FILL:
-        ### weights = ... # (N, H, W)
+        alpha_0 = torch.zeros((1, *alphas.shape[1:]), device=alphas.device)
+        alpha_res = 1 - torch.cat([alpha_0, alphas], dim=0)
+        alpha_pro = torch.cumprod(alpha_res, dim=0)[1:]
+        weights = alphas * alpha_pro
         
         # 8. Final rendering
         rendered = (weights.unsqueeze(-1) * colors).sum(dim=0)  # (H, W, 3)
